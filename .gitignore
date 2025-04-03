@@ -4,7 +4,7 @@
 *.sqlite3
 *.pem
 metodos.txt
-*.sh
+
 example.log
 notas.txt
 cripto.py

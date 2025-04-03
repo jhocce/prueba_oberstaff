@@ -26,9 +26,11 @@ services:
     restart: always
     env_file:
       - ./front/.env
-    # entrypoint: ./entry.sh
+
     networks:
       - network
+    depends_on:
+      - api
 
 volumes:
   static_data:
