@@ -11,7 +11,7 @@ services:
     restart: always
     env_file:
       - ./pruebaoberstaff/.env
-    entrypoint: ./entry.sh
+    entrypoint: ./pruebaoberstaff/entry.sh
     networks:
       - network
   
