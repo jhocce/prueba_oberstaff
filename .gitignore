@@ -1,0 +1,15 @@
+*.pyc[co]
+*.pyc
+
+*.sqlite3
+*.pem
+metodos.txt
+*.sh
+example.log
+notas.txt
+cripto.py
+process
+staticfiles
+static
+venv
+venv2

@@ -1,0 +1,39 @@
+services:
+  api:
+    build: ./pruebaoberstaff/
+    deploy:
+      replicas: 1
+    command: gunicorn --bind 0.0.0.0:8000 pruebaoberstaff.wsgi:application
+    volumes:
+      - static_data:/api/static
+    ports:
+      - "8000:8000"
+    restart: always
+    env_file:
+      - ./pruebaoberstaff/.env
+    entrypoint: ./entry.sh
+    networks:
+      - network
+  
+  front:
+    build: ./front/
+    deploy:
+      replicas: 1
+    command: flet run --web --port 9000 
+   
+    ports:
+      - "9000:9000"
+    restart: always
+    env_file:
+      - ./front/.env
+    # entrypoint: ./entry.sh
+    networks:
+      - network
+
+volumes:
+  static_data:
+  postgres_data:
+
+networks:
+  network:
+    driver: bridge
