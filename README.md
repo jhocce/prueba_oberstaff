@@ -10,18 +10,18 @@ Ambos proyectos están configurados para ejecutarse en contenedores Docker.
 ---
 
 ## Estructura del Proyecto
-├── front/ # Código fuente del frontend 
-│   ├── src/ # Código principal de la aplicación Flet 
-│   ├── Dockerfile # Configuración de Docker para el frontend 
-│   └── requirements.txt # Dependencias del frontend 
-├── pruebaoberstaff/ # Código fuente del backend 
-│   ├── apps/ # Aplicaciones del proyecto Django 
-│   ├── Dockerfile # Configuración de Docker para el backend 
-│   ├── manage.py # Script de gestión de Django
-│   ├── entry.sh # se ejecuta una vez construida la imagen en el contenedor.
-│   ├── GenKeRsa.py # Script que generar las claves RSA en .pem
-│   └── requirements.txt # Dependencias del backend 
-└── docker-compose.yml # Configuración para ejecutar ambos servicios
+├── front/ # Código fuente del frontend  
+│   ├── src/ # Código principal de la aplicación Flet  
+│   ├── Dockerfile # Configuración de Docker para el frontend  
+│   └── requirements.txt # Dependencias del frontend  
+├── pruebaoberstaff/ # Código fuente del backend  
+│   ├── apps/ # Aplicaciones del proyecto Django  
+│   ├── Dockerfile # Configuración de Docker para el backend  
+│   ├── manage.py # Script de gestión de Django  
+│   ├── entry.sh # se ejecuta una vez construida la imagen en el contenedor.  
+│   ├── GenKeRsa.py # Script que generar las claves RSA en .pem  
+│   └── requirements.txt # Dependencias del backend  
+└── docker-compose.yml # Configuración para ejecutar ambos servicios  
 
 
 ---
