@@ -36,8 +36,8 @@ Ambos proyectos están configurados para ejecutarse en contenedores Docker.
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/jhocce/prueba_oberstaff.git 
+   cd prueba_oberstaff
 
 ## Configuración de Variables de Entorno
 
