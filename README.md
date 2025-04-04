@@ -66,3 +66,12 @@ El siguiente es un usuario de prueba del tipo administrador.
 
 * usuario: prueba@prueba.com
 * contraseña: 123456
+
+
+## Consideraciones finales
+Es posible que al momento de clonar el proyecto el carácter de fin de linea de algunos archivos se modifique por lo que señala que se puede modificar desde visual studio code como CRLF=>LF en la parte inferior derecha esto justo antes de construir el contenedor.
+
+Los archivos esenciales para esta modificación serian:
+
+      pruebaoberstaff/entry.py
+      pruebaoberstaff/GenKeRsa.py
