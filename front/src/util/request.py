@@ -36,11 +36,11 @@ class request():
             if self.page.client_storage.contains_key(key):
                 cuerpo = self.page.client_storage.get(key)
                 if (datetime.now()-parse(cuerpo['fecha'])).total_seconds() >= 300:
-           
-                    self.page.client_storage.set(key, {
-                        "fecha":str(datetime.now()),
-                        "content":respuesta.json()['json'][0]
-                    })
+                    if len(respuesta.json()['json'])!=0:
+                        self.page.client_storage.set(key, {
+                            "fecha":str(datetime.now()),
+                            "content":respuesta.json()['json'][0]
+                        })
                 else:
                     res = respuesta.json()
                     res['json'][0]=cuerpo['content']

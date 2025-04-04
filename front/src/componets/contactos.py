@@ -28,48 +28,45 @@ class contactos(ft.ResponsiveRow, request):
        
         if resp.status_code == 500:
             return resp, None
-
-        for dat in dataRe['json'][0]['data']:
-
-            
-
-            data.append(ft.DataRow(
-                        cells=[
-                            ft.DataCell(ft.Text(dat['Nombres'])),
-                            ft.DataCell(ft.Text(dat['Apellidos'])),
-                            ft.DataCell(ft.Text(dat['Telefono'])),
-                            ft.DataCell(ft.Text(dat['Correo'])),
-                           
-                            ft.DataCell(ft.Row(controls=[
-                                ft.IconButton( 
-                                    icon=ft.Icons.EDIT,
-                                    icon_color=ft.Colors.GREY,
-                                    selected_icon_color=ft.Colors.PURPLE_200,
-                                    icon_size=20,
-                                    tooltip="Editar",
-                                    data=[dat['pk_publica'],dataRe['entity']],
-                                    on_click=self.actualizar
-                                    ),
-                                ft.IconButton( 
-                                    icon=ft.Icons.DELETE,
-                                    icon_color=ft.Colors.GREY,
-                                    selected_icon_color=ft.Colors.PURPLE_200,
-                                    icon_size=20,
-                                    tooltip="Eliminar",
-                                    data = (dat['pk_publica'],dataRe['entity']),
-                                    on_click=self.eliminar
-                                    ),
-                                ft.IconButton( 
-                                    icon=ft.Icons.VISIBILITY ,
-                                    icon_color=ft.Colors.GREY,
-                                    selected_icon_color=ft.Colors.PURPLE_200,
-                                    icon_size=20,
-                                    tooltip="Detallar",
-                                    data = (dat['pk_publica'],dataRe['entity'])
-                                    ),
-                                ])),
-                        ],
-                    ))
+        if len(dataRe['json'])!=0:
+            for dat in dataRe['json'][0]['data']:
+                data.append(ft.DataRow(
+                            cells=[
+                                ft.DataCell(ft.Text(dat['Nombres'])),
+                                ft.DataCell(ft.Text(dat['Apellidos'])),
+                                ft.DataCell(ft.Text(dat['Telefono'])),
+                                ft.DataCell(ft.Text(dat['Correo'])),
+                            
+                                ft.DataCell(ft.Row(controls=[
+                                    ft.IconButton( 
+                                        icon=ft.Icons.EDIT,
+                                        icon_color=ft.Colors.GREY,
+                                        selected_icon_color=ft.Colors.PURPLE_200,
+                                        icon_size=20,
+                                        tooltip="Editar",
+                                        data=[dat['pk_publica'],dataRe['entity']],
+                                        on_click=self.actualizar
+                                        ),
+                                    ft.IconButton( 
+                                        icon=ft.Icons.DELETE,
+                                        icon_color=ft.Colors.GREY,
+                                        selected_icon_color=ft.Colors.PURPLE_200,
+                                        icon_size=20,
+                                        tooltip="Eliminar",
+                                        data = (dat['pk_publica'],dataRe['entity']),
+                                        on_click=self.eliminar
+                                        ),
+                                    ft.IconButton( 
+                                        icon=ft.Icons.VISIBILITY ,
+                                        icon_color=ft.Colors.GREY,
+                                        selected_icon_color=ft.Colors.PURPLE_200,
+                                        icon_size=20,
+                                        tooltip="Detallar",
+                                        data = (dat['pk_publica'],dataRe['entity'])
+                                        ),
+                                    ])),
+                            ],
+                        ))
         return resp, data
 
 
@@ -506,6 +503,7 @@ class contactos(ft.ResponsiveRow, request):
     def registrar(self, e):
         validado, data= self.validar(e)
         # print(validado, data)
+        del data["pk_publica"]
         resp = self.Post("/user/contacto", data=data)
         dataRe= resp.json()
 
