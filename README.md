@@ -60,3 +60,9 @@ Ambos proyectos están configurados para ejecutarse en contenedores Docker.
     http://localhost:8000/swagger/
     
     http://localhost:8000/redoc/
+
+## Data de prueba
+El siguiente es un usuario de prueba del tipo administrador.
+
+* usuario: prueba@prueba.com
+* contraseña: 123456

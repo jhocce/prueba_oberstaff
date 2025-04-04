@@ -1,10 +1,6 @@
 import json
 from Crypto.PublicKey import RSA
 
-
-
-
-
 def main():
     key = RSA.generate(2048)
     # private_key = key.export_key()
@@ -18,3 +14,5 @@ def main():
 
     with open("apps/system/public_back.pem", "wb") as f:
         f.write(public_key)
+if __name__ == "__main__":
+    main()

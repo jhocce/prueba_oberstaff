@@ -85,7 +85,7 @@ class login(ft.ResponsiveRow):
                                 color="black",
                                 prefix_icon=ft.Icons.EMAIL,
     
-                                value="pruebacontacto3@prueba.com",
+                                value="",
           
                             ),
                             ft.Icon(name=ft.Icons.WARNING, color=ft.Colors.RED_200, visible=False),
@@ -107,7 +107,7 @@ class login(ft.ResponsiveRow):
                                 hint_text="Contraseña",
                                 border="underline",
                                 color="black",
-                                value="123456",
+                                # value="",
                                 prefix_icon=ft.Icons.LOCK,
                                 can_reveal_password=True,
                                 password=True
