@@ -57,7 +57,7 @@ class login(ft.ResponsiveRow):
         # self.page=page
         self.correo = ft.Ref[ft.Row()]()
         self.pas = ft.Ref[ft.Row()]()
-        print("lanzando login")
+        print("lanzando Frontend")
         self.controls = [
             ft.Container(
                         ft.Text("Inicio de sesión",
@@ -246,10 +246,6 @@ def main(page: ft.Page):
             page.add(base(page)) 
         
     else:
-        # page.session.set("tokenkey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImZmYjI4NDUyLTExYmItNDM1NC1iM2U5LTRjMTlkOTkxOGI3NiIsInBrX3B1YmxpY2EiOiI2YTM1MjA1ZS00NDljLTRiODMtYjI1NS1lOWYxNDc1OTFjZTEifQ.WkIJTFeZ4fT8qrfypIfR4UNg2GB3npXCmERVWb8jiSk")
-        # page.add(ui(page))
-        # page.controls.append(login(page))
         page.add(login(page)) 
-        # page.add(base(page))
 
 ft.app(main)
